@@ -1,0 +1,415 @@
+:root {
+    --background: rgb(236, 237, 255);
+    --body_text: rgb(255, 255, 255);
+    --blue_color: rgb(92, 81, 253);
+    --header_text_color: white;
+    --white_color: #ffffff;
+    --placeholder_color: #ffffff44;
+}
+
+@media(max-width:600px) {
+    #produtos ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #produtos li {
+        width: 90%;
+    }
+
+    #carrinho {
+        width: 90%;
+        right: 5%;
+    }
+}
+
+@keyframes button-pulse {
+    0% {
+        transform: scale(1);
+        background-color: var(--blue_color);
+    }
+
+    50% {
+        transform: scale(1.1);
+        background-color: var(--blue_color);
+    }
+
+    100% {
+        transform: scale(1);
+        background-color: var(--blue_color);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--body_text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("img/fundo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+
+    flex: 1;
+}
+
+main h3 {
+    text-align: center;
+}
+
+main .produtos-botao {
+    cursor: pointer;
+    border: none;
+    background-color: var(--blue_color);
+    color: var(--white_color);
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+
+
+    font-size: large;
+    width: 250px;
+    height: 50px;
+    animation: button-pulse 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px var(--white_color);
+}
+
+main .produtos-botao:hover{
+    background-color: rgb(77, 65, 255);
+    box-shadow: 0 0 5px rgb(0, 119, 255);
+    animation-play-state: paused;
+}
+
+main .btn:active{
+    background-color: rgb(0, 173, 173);
+}   
+
+header {
+    background-color: var(--blue_color);
+
+}
+
+header nav {
+    background-color: var(--blue_color);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 10px 20px;
+    gap: 20px;
+    font-size: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    color: var(--white_color);
+    text-decoration: none;
+    transition: transform 0.3s;
+    padding: 5px 10px;
+    text-shadow: 0 0 10px var(--white_color);
+}
+
+nav ul li a:hover {
+    transform: scale(1.2);
+    text-decoration: underline;
+    
+    border: none;
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: var(--body_text);
+    text-shadow: 0 0 20px black;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--blue_color);
+    bottom: 10px;
+    color: var(--white_color);
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+.botao-centro {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@keyframes desconto-texto {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.chamado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+    margin-right: 30px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.199);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.555);
+    transition: transform 0.2s;
+}
+
+.chamado:hover{
+    transform: scale(1.1);
+}
+
+.chamado p{
+    font-size: 20px;
+    text-decoration:underline
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chamado input{
+    width: 96%;
+    height: 40px;
+    border: 1px solid var(--white_color);
+    border-radius: 20px;
+    padding: 10px;
+    background: none;
+    caret-color: var(--white_color);
+    color: var(--white_color);
+    font-weight: bold;
+}
+
+.chamado button{
+    float: right;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--blue_color);
+    color: var(--white_color);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 0 0 2px var(--white_color);
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.chamado input::placeholder {
+    font-size: larger;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    font-weight: bold;
+    color: var(--placeholder_color);
+    
+}
+
+.chamado input:focus{
+    
+    border-color: var(--white_color);
+    outline: none;
+}
+
+.main-container{
+    text-align: center;
+    font-size: 20px;
+}
+
+.main-container a{
+    color: var(--white_color);
+}
+
+.desconto-container .sabado{
+    color: rgb(58, 58, 255);
+    text-shadow: 0 0 10px rgb(58, 58, 255);
+}
+
+.desconto-container .domingo{
+    color: rgb(58, 58, 255);
+    text-shadow: 0 0 10px rgb(58, 58, 255);
+}
+
+.desconto-container .texto-desconto{
+    color: yellow;
+    text-shadow: 0 0 10px yellow;
+}
+
+.desconto-container {
+    background-color: rgba(0, 0, 0, 0.253);
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 1px;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: solid;
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--white_color);
+}
+
+.desconto-container p {
+    display: inline-block;
+    animation-name: desconto-texto;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    font-size: 25px;
+}
+
+.container {
+    text-align: center;
+}
+
+.container ul {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.container li {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.034);
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.container li:hover {
+    transform: scale(1.03);
+}
+
+.container li img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    background-color: var(--blue_color);
+    color: var(--white_color);
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: rgb(77, 65, 255);
+    box-shadow: 0 0 5px rgb(0, 119, 255);
+}
+
+.btn:active {
+    background-color: rgb(0, 173, 173);
+}
+
+.aba_carrin {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: var(--blue_color);
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s;
+    transition: transform 0.2s;
+}
+
+.aba_carrin:hover {
+    background-color: rgb(0, 119, 255);
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgb(0, 119, 255);
+}
+
+.carrin {
+    display: none;
+    position: fixed;
+    top: 70px;
+    background-color: var(--blue_color);
+    color: var(--body_text);
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999;
+    max-width: 300px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.carrin h2 {
+    margin-top: 0;
+}
+
+.carrin li {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.carrin_total {
+    font-weight: bold;
+}
+
+.logo-container img {
+    float: left;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.logo-container img:hover {
+    transform: scale(1.5) rotate(360deg);
+
+}
+
+.whatsapp:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.facebook:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.instagram:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
